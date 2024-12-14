@@ -37,6 +37,7 @@
         <!-- Hamburger for mobile -->
         <div class="hamburger-container">
             <Hamburger 
+                onclick={toggleMenu}
                 toggled={menuOpen} 
                 toggle={toggleMenu} 
                 color="#000" 
@@ -159,6 +160,7 @@ header {
         /* Hamburger Container */
         .hamburger-container {
             display: none;
+            z-index: 10;
 
             @media (max-width: 768px) {
                 display: flex;
