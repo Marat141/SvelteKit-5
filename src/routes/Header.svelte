@@ -2,6 +2,7 @@
     import { Hamburger } from 'svelte-hamburgers';
 
     const menu_list = [
+        { name: "Profil", url: "./"},
         { name: "Domov", url: "./" },
         { name: "Login", url: "/Login" },
         { name: "Register", url: "/Register" },
@@ -129,7 +130,7 @@ header {
             right: 0;
             height: 100vh;
             width: 200px;
-            background: white;
+            background-color: #be72e9FF; 
             box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
