@@ -17,7 +17,7 @@
             <input type="text" placeholder="Jméno nebo Email">
             <input type="password" placeholder="Heslo">
         </div>
-        <a href="/" class="forgot-password">Zapomenuté heslo</a>
+        <a href="./ForgetPassword" class="forgot-password">Zapomenuté heslo</a>
         <Button label="Přihlásit se" />
     </div>
 </main>

@@ -23,152 +23,153 @@
 
 <header class={className}>
     <div class="header-content">
-        <a href="/"><h1>{title}</h1></a>
-        {#if subtitle}
-            <h2>{subtitle}</h2>
-        {/if}
-
-        <!-- Desktop Navigation Links -->
-        <div class="links desktop-links">
-            {#each menu_list as menu}
-                <a href={menu.url}>{menu.name}</a>
-            {/each}
-        </div>
-
-        <!-- Hamburger for mobile -->
-        <div class="hamburger-container">
-            <Hamburger 
-                onclick={toggleMenu}
-                toggled={menuOpen} 
-                toggle={toggleMenu} 
-                color="#000" 
-                size={30} 
-            />
-        </div>
-
-        <!-- Mobile Navigation Links with Slide Effect -->
-        <div class="links mobile-links {menuOpen ? 'open' : ''}">
-            {#each menu_list as menu}
-                <a href={menu.url}>{menu.name}</a>
-            {/each}
-        </div>
+      <a href="/"><h1>{title}</h1></a>
+      {#if subtitle}
+        <h2>{subtitle}</h2>
+      {/if}
+  
+      <!-- Desktop Navigation Links -->
+      <div class="links desktop-links">
+        {#each menu_list as menu}
+          <a href={menu.url}>{menu.name}</a>
+        {/each}
+      </div>
+  
+      <!-- Hamburger for mobile -->
+      <div class="hamburger-container">
+        <Hamburger 
+          onclick={toggleMenu}
+          toggled={menuOpen} 
+          toggle={toggleMenu} 
+          color="#e0e0e0" 
+          size={30} 
+        />
+      </div>
+  
+      <!-- Mobile Navigation Links with Slide Effect -->
+      <div class="links mobile-links {menuOpen ? 'open' : ''}">
+        {#each menu_list as menu}
+          <a href={menu.url}>{menu.name}</a>
+        {/each}
+      </div>
     </div>
-</header>
-
-<style lang="scss">
-header {
+  </header>
+  
+  <style lang="scss">
+  header {
     padding: 20px 0;
-    background-color: #be72e9c0;
-
+    background: linear-gradient(135deg, #333333, #1a1a1a); /* Stejný přechod jako footer */
+    color: #e0e0e0;
+  
     .header-content {
-        display: flex;
-        align-items: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+  
+      @media (max-width: 768px) {
+        flex-direction: row;
         justify-content: space-between;
-        padding: 0 20px;
-        position: relative;
-
+        text-align: left;
+      }
+  
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+  
+      h1 {
+        margin: 0;
+        font-size: 2rem;
+        color: #ff9900; /* Akcent oranžové */
+  
         @media (max-width: 768px) {
-            flex-direction: row;
-            justify-content: space-between;
-            text-align: left;
+          font-size: 1.5rem;
         }
-
+      }
+  
+      h2 {
+        margin: 0;
+        font-size: 1.2rem;
+        color: #ff9900;
+  
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
+      }
+  
+      /* Desktop Navigation Links */
+      .desktop-links {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+  
         a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2rem;
-            color: #000;
-
-            @media (max-width: 768px) {
-                font-size: 1.5rem;
-            }
-        }
-
-        h2 {
-            margin: 0;
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: #e0e0e0;
+  
+          &:hover {
+            color: #ff9900;
+          }
+  
+          @media (max-width: 768px) {
             font-size: 1.2rem;
-            color: #000;
-
-            @media (max-width: 768px) {
-                font-size: 1rem;
-            }
+          }
         }
-
-        /* Desktop Navigation Links */
-        .desktop-links {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-
-            a {
-                font-size: 1.5rem;
-                font-weight: bold;
-                color: #000;
-
-                &:hover {
-                    color: red;
-                }
-
-                @media (max-width: 768px) {
-                    font-size: 1.2rem;
-                }
-            }
-
-            @media (max-width: 768px) {
-                display: none;
-            }
+  
+        @media (max-width: 768px) {
+          display: none;
         }
-
-        /* Mobile Navigation Links with Slide Effect */
-        .mobile-links {
-            position: fixed;
-            top: 0;
-            right: 0;
-            height: 100vh;
-            width: 200px;
-            background-color: #be72e9FF; 
-            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            padding: 20px;
-            transform: translateX(100%);
-            transition: transform 0.3s ease-in-out;
-
-            &.open {
-                transform: translateX(0);
-            }
-
-            a {
-                font-size: 1.5rem;
-                font-weight: bold;
-                color: #000;
-
-                &:hover {
-                    color: red;
-                }
-
-                @media (max-width: 768px) {
-                    font-size: 1.2rem;
-                }
-            }
+      }
+  
+      /* Mobile Navigation Links with Slide Effect */
+      .mobile-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 200px;
+        background: linear-gradient(135deg, #333333, #1a1a1a); 
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+  
+        &.open {
+          transform: translateX(0);
         }
-
-        /* Hamburger Container */
-        .hamburger-container {
-            display: none;
-            z-index: 10;
-
-            @media (max-width: 768px) {
-                display: flex;
-                position: absolute;
-                right: 20px;
-            }
+  
+        a {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: #e0e0e0;
+  
+          &:hover {
+            color: #ff9900;
+          }
+  
+          @media (max-width: 768px) {
+            font-size: 1.2rem;
+          }
         }
+      }
+  
+      /* Hamburger Container */
+      .hamburger-container {
+        display: none;
+        z-index: 10;
+  
+        @media (max-width: 768px) {
+          display: flex;
+          position: absolute;
+          right: 20px;
+        }
+      }
     }
-}
-</style>
+  }
+  </style>
+  
