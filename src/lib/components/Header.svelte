@@ -5,7 +5,7 @@
     { name: "Domov", url: "./" },
     { name: "Login", url: "/Login" },
     { name: "Register", url: "/Register" },
-    { name: "Profil", url: "./" }
+    { name: "Profil", url: "/Profile" }
   ]);
 
   let menuOpen = $state(false);
@@ -106,9 +106,12 @@ header {
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     padding-top: 80px;
+    z-index: 1;
+
 
     &.open {
       transform: translateX(0);
+      z-index: 1;
     }
 
     a {
