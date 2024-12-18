@@ -105,6 +105,7 @@ header {
     padding: 20px;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
+    padding-top: 80px;
 
     &.open {
       transform: translateX(0);
@@ -114,6 +115,7 @@ header {
       font-size: 1.5rem;
       font-weight: bold;
       color: #e0e0e0;
+      
 
       &:hover {
         color: #ff9900;

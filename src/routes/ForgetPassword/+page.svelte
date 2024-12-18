@@ -41,7 +41,7 @@
 
 <main>
     <div class="window-forget-password">
-        <h1>Zapomenuté heslo</h1>
+        <h1>Zapomenuté heslo, ověření emailu</h1>
         <div class="inputs">
             <input 
                 type="text" 
