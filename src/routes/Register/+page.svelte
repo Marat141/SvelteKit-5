@@ -1,14 +1,20 @@
 <script>
-	import Header from './../Header.svelte';
-    import Footer from './../Footer.svelte';
-    import Button from './../Button.svelte';
+	import Header from '../../lib/components/Header.svelte';
+    import Footer from '../../lib/components/Footer.svelte';
+    import Button from '../../lib/components/Button.svelte';
 
-    let {
-        userName = '',
-        Email = '',
-        Password = '',
-        confirmPassword = ''
-    } = $props()
+    let userName = $state('');
+    let Email = $state('');
+    let Password = $state('');
+    let confirmPassword = $state('');
+
+    function handleRegister() {
+        if (Password === confirmPassword) {
+            console.log('Registrace úspěšná:', { userName, Email, Password });
+        } else {
+            console.error('Hesla se neshodují.');
+        }
+    }
 </script>
 
 <Header />
@@ -17,16 +23,21 @@
     <div class="window-register">
         <h1>Registrace</h1>
         <div class="inputs">
-            <input type="text" placeholder="Uživatelské jméno">
-            <input type="text" placeholder="Email">
-            <input type="password" placeholder="Heslo">
-            <input type="password" placeholder="Potvrzení hesla">
+            <input type="text" placeholder="Uživatelské jméno" bind:value={userName} />
+            <input type="email" placeholder="Email" bind:value={Email} />
+            <input type="password" placeholder="Heslo" bind:value={Password} />
+            <input type="password" placeholder="Potvrzení hesla" bind:value={confirmPassword} />
         </div>
-        <Button label="Registrace" class="custom-register-button" />
+
+        <Button 
+            label="Registrace" 
+            class="custom-register-button"  
+            onclick={handleRegister} />
     </div>
 </main>
 
 <Footer />
+
 
 <style lang="scss">
 main {
@@ -60,9 +71,10 @@ main {
     display: flex;
     flex-direction: column;
     gap: 15px; // Menší mezery mezi inputy
-    margin-bottom: 20px;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
+
+
 
 .inputs input {
     padding: 15px; 
@@ -80,8 +92,6 @@ main {
     box-shadow: 0px 0px 10px #b800ff; 
 }
 
-
-
 @media (max-width: 768px) {
     .window-register {
         padding: 20px;
@@ -93,5 +103,4 @@ main {
         padding: 12px;
     }
 }
-
 </style>
