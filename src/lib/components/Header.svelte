@@ -4,7 +4,7 @@
   const menu_list = $state([
     { name: "Domov", url: "./" },
     { name: "Login", url: "/Login" },
-    { name: "Register", url: "/Register" },
+    { name: "Regisrace", url: "/Register" },
     { name: "Profil", url: "/Profile" }
   ]);
 

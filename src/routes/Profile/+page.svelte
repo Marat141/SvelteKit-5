@@ -15,7 +15,7 @@
   
     // Funkce pro přepínání zobrazení okénka
     function toggleSettings() {
-      showSettings = !showSettings;
+      showSettings = !showSettings
     }
   
     // Funkce pro validaci délky vstupu
@@ -45,7 +45,7 @@
       </div>
     </div>
     <div class="setting">
-      <img class="settings-icon" src="Setting.png" alt="Nastavení" onClick={toggleSettings} />
+      <a href="/Settings"> <img class="settings-icon" src="Setting.png" alt="Nastavení" onClick={toggleSettings} /> </a>
     </div>
   
     {#if showSettings}
