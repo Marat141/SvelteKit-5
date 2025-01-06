@@ -21,7 +21,10 @@
 	},
 	"dependencies": {
 		"@libsql/client": "^0.9.0",
+		"bcrypt": "^5.1.1",
 		"drizzle-orm": "^0.33.0",
+		"jsonwebtoken": "^9.0.2",
+		"nodemailer": "^6.9.16",
 		"sqlite3": "^5.1.7",
 		"svelte-motion": "^0.12.2"
 	}
